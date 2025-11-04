@@ -1,3 +1,13 @@
+:root {
+    --primary-color: #d62828;
+    --secondary-color: #f77f00;
+    --background-color: #fcbf49;
+    --input-background-color: #eae2b7;
+    --hover-color: #314e9e;
+    --font-luckiest: "Luckiest Guy", cursive;
+    --font-kanit: "Kanit", sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +18,7 @@ header,
 section h2,
 section h3,
 form button {
-    font-family: "Luckiest Guy", cursive;
+    font-family: var(--font-luckiest);
     font-weight: 400;
     font-style: normal;
 }
@@ -18,7 +28,7 @@ section h2 {
 }
 
 body {
-    background-color: #fcbf49;
+    background-color: var(--background-color);
     background-image: url(./images/Fundo\ de\ cerveja\ lager\ _\ Vetor\ Premium.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -26,19 +36,19 @@ body {
 }
 
 input, textarea {
-    background-color:#eae2b7 ;
+    background-color: var(--input-background-color);
 }
 
 body, input, textarea {
-    font-family: "Kanit", sans-serif;
+    font-family: var(--font-kanit);
     font-weight: 400;
     font-style: normal;
 }
 
 header {
     padding: 16px 0;
-    background-color: #d62828;
-    color: #f77f00 ;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 header nav li {
@@ -48,7 +58,7 @@ header nav li {
 }
 
 header nav li a {
-    color: #f77f00 ;
+    color: var(--secondary-color);
     text-decoration: none;
 }
 
@@ -89,7 +99,7 @@ section h2 {
 }
 
 section {
-    color: #d62828;
+    color: var(--primary-color);
 }
 
 section p {
@@ -141,23 +151,23 @@ section h3 {
 }
 
 form button {
-    background-color: #d62828;
-    color: #f77f00;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     border: none ;
     cursor: pointer;
 }
 
 form button:hover {
-    background-color: #314e9e;
+    background-color: var(--hover-color);
 }
 
 input:focus, textarea:focus {
-    outline-color: #d62828;
+    outline-color: var(--primary-color);
 }
 
 footer {
-    background-color: #d62828;
-    color: #f77f00;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     padding: 16px 0;
 }
 
@@ -171,4 +181,54 @@ footer {
 
 .brands-list li {
     text-align: center; /* Centraliza a imagem dentro do item da lista */
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    header .container,
+    section .container {
+        display: block;
+    }
+
+    header nav {
+        margin-top: 16px;
+    }
+
+    header nav li {
+        display: block;
+        margin-left: 0;
+        margin-bottom: 8px;
+    }
+
+    .brands-list {
+        display: block;
+    }
+
+    .brands-list li {
+        display: block;
+        margin-bottom: 16px;
+    }
+
+    .contact-methods {
+        display: block;
+    }
+
+    form input,
+    form textarea,
+    form button {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        max-width: 90%;
+    }
+
+    .brands-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
